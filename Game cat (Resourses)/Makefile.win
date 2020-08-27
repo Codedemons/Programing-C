@@ -4,8 +4,9 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o
-LINKOBJ  = main.o
+RES      = Game_Cat_private.res
+OBJ      = main.o Resources/Componentes_Librerias/Ubicaciones.o Resources/Componentes_Librerias/Mensajes.o Resources/Componentes_Librerias/Herramientas.o Resources/Componentes_Librerias/Configurarcion.o Resources/Componentes_Librerias/Archivos.o Resources/Componentes_Librerias/Estilos.o Resources/Componentes_Librerias/Sonidos.o Resources/Componentes_Librerias/Analizador_gato.o Resources/Componentes_Librerias/Informacion.o Resources/Componentes_Librerias/Registros.o $(RES)
+LINKOBJ  = main.o Resources/Componentes_Librerias/Ubicaciones.o Resources/Componentes_Librerias/Mensajes.o Resources/Componentes_Librerias/Herramientas.o Resources/Componentes_Librerias/Configurarcion.o Resources/Componentes_Librerias/Archivos.o Resources/Componentes_Librerias/Estilos.o Resources/Componentes_Librerias/Sonidos.o Resources/Componentes_Librerias/Analizador_gato.o Resources/Componentes_Librerias/Informacion.o Resources/Componentes_Librerias/Registros.o $(RES)
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -26,3 +27,37 @@ $(BIN): $(OBJ)
 
 main.o: main.c
 	$(CC) -c main.c -o main.o $(CFLAGS)
+
+Resources/Componentes_Librerias/Ubicaciones.o: Resources/Componentes_Librerias/Ubicaciones.c
+	$(CC) -c Resources/Componentes_Librerias/Ubicaciones.c -o Resources/Componentes_Librerias/Ubicaciones.o $(CFLAGS)
+
+Resources/Componentes_Librerias/Mensajes.o: Resources/Componentes_Librerias/Mensajes.c
+	$(CC) -c Resources/Componentes_Librerias/Mensajes.c -o Resources/Componentes_Librerias/Mensajes.o $(CFLAGS)
+
+Resources/Componentes_Librerias/Herramientas.o: Resources/Componentes_Librerias/Herramientas.c
+	$(CC) -c Resources/Componentes_Librerias/Herramientas.c -o Resources/Componentes_Librerias/Herramientas.o $(CFLAGS)
+
+Resources/Componentes_Librerias/Configurarcion.o: Resources/Componentes_Librerias/Configurarcion.c
+	$(CC) -c Resources/Componentes_Librerias/Configurarcion.c -o Resources/Componentes_Librerias/Configurarcion.o $(CFLAGS)
+
+Resources/Componentes_Librerias/Archivos.o: Resources/Componentes_Librerias/Archivos.c
+	$(CC) -c Resources/Componentes_Librerias/Archivos.c -o Resources/Componentes_Librerias/Archivos.o $(CFLAGS)
+
+Resources/Componentes_Librerias/Estilos.o: Resources/Componentes_Librerias/Estilos.c
+	$(CC) -c Resources/Componentes_Librerias/Estilos.c -o Resources/Componentes_Librerias/Estilos.o $(CFLAGS)
+
+Resources/Componentes_Librerias/Sonidos.o: Resources/Componentes_Librerias/Sonidos.c
+	$(CC) -c Resources/Componentes_Librerias/Sonidos.c -o Resources/Componentes_Librerias/Sonidos.o $(CFLAGS)
+
+Resources/Componentes_Librerias/Analizador_gato.o: Resources/Componentes_Librerias/Analizador_gato.c
+	$(CC) -c Resources/Componentes_Librerias/Analizador_gato.c -o Resources/Componentes_Librerias/Analizador_gato.o $(CFLAGS)
+
+Resources/Componentes_Librerias/Informacion.o: Resources/Componentes_Librerias/Informacion.c
+	$(CC) -c Resources/Componentes_Librerias/Informacion.c -o Resources/Componentes_Librerias/Informacion.o $(CFLAGS)
+
+Resources/Componentes_Librerias/Registros.o: Resources/Componentes_Librerias/Registros.c
+	$(CC) -c Resources/Componentes_Librerias/Registros.c -o Resources/Componentes_Librerias/Registros.o $(CFLAGS)
+
+Game_Cat_private.res: Game_Cat_private.rc 
+	$(WINDRES) -i Game_Cat_private.rc -F pe-i386 --input-format=rc -o Game_Cat_private.res -O coff 
+
