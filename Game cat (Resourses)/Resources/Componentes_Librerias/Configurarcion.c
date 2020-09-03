@@ -30,5 +30,7 @@ void Config()
 	medidas();
 	title("Juego del gato");
 	bordes(0,79,0,29);
-	
+	bodesM();
+	Lineas_Cat();
+//	Gato_Player_1();
 }
