@@ -29,6 +29,7 @@ void Config()
 {
 	medidas();
 	title("Juego del gato");
+	ocultarcursor();
 	bordes(0,79,0,29);
 	bodesM();
 	Lineas_Cat();

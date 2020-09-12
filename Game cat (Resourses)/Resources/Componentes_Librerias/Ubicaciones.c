@@ -10,6 +10,15 @@ dwPos.Y =y;
 SetConsoleCursorPosition(hcon,dwPos);
 }
 
+void ocultarcursor(){
+	HANDLE hCon;
+	hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO cci;
+	cci.dwSize = 2; //ancho del cur
+	cci.bVisible = 0;
+	SetConsoleCursorInfo(hCon, &cci);	
+}
+
 void gotoxy_text(int Col,int Fil, char*txt)
 {
 	gotoxy(Col,Fil);

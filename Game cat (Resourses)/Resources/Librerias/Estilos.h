@@ -7,6 +7,7 @@
 void bordes(int alt_ini,int alt_fin, int larg_ini, int larg_fin);
 void bodesM();
 void Lineas_Cat();
+
 void Gato_Player_1();
 #endif
 

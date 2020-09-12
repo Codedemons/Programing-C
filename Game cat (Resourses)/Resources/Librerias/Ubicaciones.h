@@ -6,6 +6,7 @@
 void gotoxy(int x, int y);
 void gotoxy_text(int Col,int Fil, char*txt);
 void gotoxy_Car(int Col,int Fil, char txt)
+ void ocultarcursor();
 #endif
 
 
