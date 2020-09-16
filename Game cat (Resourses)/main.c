@@ -4,7 +4,8 @@
 /* Cuerpo del Proyecto */
 int main(int argc, char *argv[]) 
 {
-	Config();
+//	Config();
+	Init();
 	getch();
 	return 0;
 }

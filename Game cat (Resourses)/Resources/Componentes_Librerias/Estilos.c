@@ -4,6 +4,12 @@
 #define alt 30-1
 #define larg 80-1
 #define LargM 110-1
+//Estilso Menu
+#define Sig_176 176
+#define Sig_177 177
+#define Sig_178 178
+
+//Estilos De gato juego en proceso 
 #define Sig_185 185
 #define Sig_186 186
 #define Sig_187 187
@@ -15,8 +21,13 @@
 #define Sig_204 204
 #define Sig_205 205
 #define Sig_206 206
+#define tamanio_2 system("mode 82,30");
+//Estilo Fuego Principal 
 
-
+int AColo = 20;
+int ACol = 20;
+int ACo = 20;
+int AC = 20;
 
 void bordes(int alt_ini,int alt_fin, int larg_ini, int larg_fin)
 {
@@ -114,17 +125,105 @@ gotoxy_Car(50,10, Sig_206);
 gotoxy_Car(30,10, Sig_206);
 	
  }
+ 
+ 
+ 
+// Estilos Menu 
 
-void Gato_Player_1()
+void MenuPrin()
 {
-	int i;
-	
-	for(i=10; i<16; i++)
-	{
-		gotoxy(3,8);
-		printf("%c",177);
-	}
+ocultarcursor();
+tamanio_2
+ 
+Marco();
+ 
 }
 
 
+//cuadros de lineas por Oocion
+void Marco()
+{
+int i;	
+const char *Opc[] ={"1.-iniciar Juego.","2.-Cargar partida.","3.-Records.","4.-Salir."};
+
+int j;
+int color;
+color = 40;
  
+//opc _1
+
+ for(i=10; i<28; i++)
+ {
+ 	for(j=6; j<14; j++)
+	 {
+ 	  gotoxy_color(i,j,color); printf("%c",0);
+	 }  
+ }
+ 
+//opc _2 
+  for(i=31; i<50; i++)
+ {
+ 	for(j=6; j<14; j++)
+	 {
+ 	  gotoxy_color(i,j,color); printf("%c",0);
+	 }  
+ }
+ 
+ //opc _3
+  for(i=53; i<72; i++)
+ {
+ 	for(j=6; j<14; j++)
+	 {
+ 	  gotoxy_color(i,j,color); printf("%c",0);
+	 }  
+ }
+ //opc _4
+  for(i=31; i<50; i++)
+ {
+ 	for(j=16; j<24; j++)
+	 {
+ 	  gotoxy_color(i,j,color); printf("%c",0);
+	 }  
+ }
+	Color(7);
+		
+	gotoxy_text(11,10,Opc[0]);
+	gotoxy_text(32,10,Opc[1]);
+	gotoxy_text(56,10,Opc[2]);
+	gotoxy_text(36,19,Opc[3]);
+	for(i=7; i<14; i++)
+	{
+		gotoxy_Car(9,i, Sig_186); 
+		gotoxy_Car(28,i, Sig_186); 		
+		gotoxy_Car(30,i, Sig_186); 
+		gotoxy_Car(50,i, Sig_186); 
+		gotoxy_Car(52,i, Sig_186); 
+		gotoxy_Car(72,i, Sig_186); 	
+	}
+	for(i=31; i<50; i++)
+	{		
+		gotoxy_Car(i,6, Sig_205);
+		gotoxy_Car(i,14, Sig_205);
+		gotoxy_Car(i,15, Sig_205);
+		gotoxy_Car(i,23, Sig_205);
+	}	
+	for(i=10; i<28; i++)
+	{		
+		gotoxy_Car(i,6, Sig_205);
+		gotoxy_Car(i,14, Sig_205);
+	}
+	for(i=16; i<23; i++)
+	{		
+		gotoxy_Car(30,i, Sig_186); 
+		gotoxy_Car(50,i, Sig_186); 	
+	}
+		for(i=53; i<72; i++)
+	{		
+		gotoxy_Car(i,6, Sig_205);
+		gotoxy_Car(i,14, Sig_205);
+	}
+	
+}
+
+ 
+

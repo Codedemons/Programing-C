@@ -31,3 +31,14 @@ void gotoxy_Car(int Col,int Fil, char txt)
 	printf("%c",txt);
 }
 
+void gotoxy_color(int Col, int Fil, int Color)
+ {
+ 	gotoxy(Col,Fil);
+ 	SetConsoleTextAttribute(GetStdHandle (STD_OUTPUT_HANDLE),Color); 
+ }
+ 
+ 
+ void Color(int Color)
+ {
+ 		SetConsoleTextAttribute(GetStdHandle (STD_OUTPUT_HANDLE),Color); 
+ }

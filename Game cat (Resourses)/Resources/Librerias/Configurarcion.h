@@ -7,6 +7,6 @@ void medidas();
 void Config();
 void titulo(char *txt);
 void title(char *txt);
-
+void Init(void);
 #endif
 

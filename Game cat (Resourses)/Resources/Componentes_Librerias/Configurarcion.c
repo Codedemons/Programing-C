@@ -3,13 +3,17 @@
 #include<stdio.h>
 #include<windows.h>
 #define tamanio system("mode 110,30");
+#define tamanio_2 system("mode 80,30");
 
 //solo es el tamaño de las ventanas
 void medidas() 
 {
 	tamanio
 }
-
+void medidas_2() 
+{
+	tamanio_2
+}
 //declara el titulo en la barra de tareas
 void titulo(char *txt)
 {
@@ -34,4 +38,10 @@ void Config()
 	bodesM();
 	Lineas_Cat();
 //	Gato_Player_1();
+}
+
+void Init(void)
+{
+	MenuPrin();
+//	Config();
 }
